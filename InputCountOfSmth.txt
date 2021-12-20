@@ -1,0 +1,12 @@
+static int InputSomethingsCount(string something, int range)
+        {
+            int count;
+            Console.WriteLine($"Please input the count of {something}, more than 0 under {range}.");
+            String UserInput = Console.ReadLine();
+            while (!int.TryParse(UserInput, out count) || count > range || count < 0)
+            {
+                Console.WriteLine($"Not a valid number, try again. Reminder: your input have to be under {range}.");
+                UserInput = Console.ReadLine();
+            }
+            return count;
+        }
